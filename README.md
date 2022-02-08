@@ -1,2 +1,0 @@
-# WinXwins
-Our new project
