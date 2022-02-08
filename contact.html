@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Kontakt</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js%22%3E"></script>
+   </head>
+   <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container">
+            <!-- Site Logo Here -->
+            <a class="navbar-brand" href="#"><img src="pics/winxwins_orange_1.png"/ width="200"></a>
+            <!-- Search Field-->
+            <div class="input-group">
+               <div id="search-autocomplete" class="form-outline" >
+                  <input type="search" id="form1" class="form-control" placeholder="Search"/>
+               </div>
+                <div>
+               <button type="button" class="btn btn-white"><img src="pics/suchen-icon-grau.png" width="20" />
+               <i class="fas fa-search"></i>
+               </button>
+                </div>
+            </div>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileToggle" aria-controls="navbarMobileToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMobileToggle">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="Submenu-Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Katalog<i class="1fas fa-wifi-1"></i>
+                     </a>
+                     <ul class="dropdown-menu rounded-3" aria-labelledby="Submenu-Dropdown">
+                        <li><a class="dropdown-item" href="#">Produkt&nbsp;Eins</a></li>
+                        <li><a class="dropdown-item" href="#">Produkt&nbsp;Zwei</a></li>
+                        <li><a class="dropdown-item" href="#">Produkt&nbsp;Drei</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Über&nbsp;uns</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Kontakt</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+   </header>
+   <body>
+      <!-- Wrapper container -->
+      <div class="container py-4">
+         <!-- Bootstrap 5 starter form -->
+         <form id="contactForm">
+            <div>
+               <h4>Kontakt-Formular</h4>
+               <p>So erreichst Du uns: Fülle das folgende Formular aus, Du wirst umgehend von uns ein Feedback erhalten.</p>
+            </div>
+            <!-- Name input -->
+            <div class="mb-3">
+               <label class="form-label" for="fistname">Vorname</label>
+               <input class="form-control" id="firstname" type="text" placeholder="Vorname" />
+            </div>
+            <div class="mb-3">
+               <label class="form-label" for="lastname">Name</label>
+               <input class="form-control" id="lastname" type="text" placeholder="Name" />
+            </div>
+            <!-- Email address input -->
+            <div class="mb-3">
+               <label class="form-label" for="emailAddress">E-Mail-Address</label>
+               <input class="form-control" id="emailAddress" type="email" placeholder="E-Mail-Address" />
+            </div>
+            <!-- Message input -->
+            <div class="mb-3">
+               <label class="form-label" for="message">Dein Anliegen</label>
+               <textarea class="form-control" id="message" type="text" placeholder="Dein Anliegen" style="height: 10rem;"></textarea>
+            </div>
+            <!-- Form submit button -->
+            <div class="d-grid">
+               <button class="btn btn-primary btn-lg" type="submit">Senden</button>
+            </div>
+         </form>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-6 col-xs-6">
+               <!--Google map-->
+               <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div>
+               <!-- SCRIPTS -->
+               <!-- JQuery -->
+               <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+               <!-- Bootstrap tooltips -->
+               <script type="text/javascript" src="js/popper.min.js"></script>
+               <!-- Bootstrap core JavaScript -->
+               <script type="text/javascript" src="js/bootstrap.min.js"></script>
+               <!-- MDB core JavaScript -->
+               <script type="text/javascript" src="js/mdb.min.js"></script>
+               <!--Google Maps-->
+               <script src="https://maps.google.com/maps/api/js"></script>
+               <!-- Google Maps settings -->
+               <script>
+                  // Regular map
+                  function regular_map() {
+                    var var_location = new google.maps.LatLng(47.389611236822645, 8.51536216264157);
+                  
+                    var var_mapoptions = {
+                      center: var_location,
+                      zoom: 17
+                    };
+                  
+                    var var_map = new google.maps.Map(document.getElementById("map-container"),
+                      var_mapoptions);
+                  
+                    var var_marker = new google.maps.Marker({
+                      position: var_location,
+                      map: var_map,
+                      title: "New York"
+                    });
+                  }
+                  
+                   // Initialize maps
+                  google.maps.event.addDomListener(window, 'load', regular_map);
+               </script>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+               <div>
+                  <h4>Adresse</h4>
+               </div>
+               <p>WinXwins GmbH<br> Technoparkstrasse 1<br>8005 Zürich</p>
+               <p> Trakt Pauli 3. OG, 3004-3009</p>
+               <p> +41 44 123 45 67<br>kontakt@winxwins.ch</p>
+            </div>
+         </div>
+      </div>
+   </body>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: black;">
+            <a class="text-reset fw-bold" href="http://www.winxins.com/copyright">© 2021 Copyright</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  Advanced example
+
+</html>
+
